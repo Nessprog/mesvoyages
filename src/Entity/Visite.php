@@ -81,9 +81,13 @@ class Visite
         return $this;
     }
 
-    public function getDatecreation(): ?\DateTimeInterface
+    public function getDatecreationString(): string
     {
-        return $this->datecreation;
+        if($this->datecreation == null){
+            return"";
+        }else{
+        return $this->datecreation->format('d/m/Y');
+        }
     }
 
     public function setDatecreation(?\DateTimeInterface $datecreation): self
