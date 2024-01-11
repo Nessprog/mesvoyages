@@ -64,7 +64,8 @@ class VoyagesController extends AbstractController{
     public function findAllEqual($champ, Request $request): Response {
      $valeur = $request->get("recherche");
      $visites = $this->repository->findByEqualValue($champ, $valeur);
-     return $this->render("pages/voyages.html.twig",[         
+     return $this->render("pages/voyages.html.twig",[ 
+         'visites' => $visites
      ]);
     }
 }
