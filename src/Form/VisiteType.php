@@ -4,9 +4,12 @@ namespace App\Form;
 
 use App\Entity\Visite;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\DateTime;
+
 
 class VisiteType extends AbstractType
 {
@@ -17,6 +20,8 @@ class VisiteType extends AbstractType
             ->add('pays')
             ->add('datecreationstring', null, [
                 'action' => 'single_text',
+                /*'data'=> isset($options['data']) && 
+                    $options['data']->getDateCreationString() != null ? $options['data']->getDateCreationString() : new DateTime('now'),*/
                 'label' => 'Date'
             ])
             ->add('note')
